@@ -1,0 +1,608 @@
+body {
+  background-color: #dfd7c1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  border-bottom: 2px solid black;
+  background-color: dfd7c1;
+}
+
+.row-header {
+  align-items: center;
+}
+
+.selector {
+  position: absolute;
+  bottom: 33px;
+  height: 22px;
+  width: 22px;
+  left: 61%;
+  text-align: center;
+  background-color: red;
+  font-size: 16px;
+  border-radius: 50%;
+  font-weight: 500;
+  color: black;
+}
+
+.amazon-logo {
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.cart-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.Category {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.Category-center {
+  display: flex;
+  align-items: center;
+}
+
+.product-col {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 2px solid black;
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+}
+
+.total-quantity {
+  font-size: 20px;
+}
+
+.total-quantity-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.empty-center {
+  display: flex;
+  justify-content: center;
+}
+
+.empty-page {
+  margin-top: 180px;
+  margin-left: 10px;
+}
+
+.shop-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.cart {
+  font-size: 50px;
+}
+
+.login-text {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.form-card {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.login-card {
+  border-radius: 20px;
+  width: 360px;
+  height: 360px;
+  padding-left: 20px;
+  background-color: white;
+}
+
+.form-login {
+  font-size: 40px;
+  font-weight: 500;
+  margin: 10px 0px 20px 0px !important;
+}
+
+.login-btn {
+  width: 91%;
+}
+
+.email-text {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.input-email {
+  width: 330px;
+}
+
+.input-password {
+  width: 330px;
+}
+
+.condition {
+  color: blue;
+}
+
+.logout-text {
+  font-size: 20px;
+  padding-left: 13px;
+}
+
+.proceed-btn {
+  text-align: center;
+}
+
+.card-form {
+  border: 2px solid none;
+  background-color: azure;
+  border-radius: 30px;
+  width: 40%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.billing-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.email-border {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.avatar {
+  padding: 10px;
+}
+
+.avatar-flex {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.logout-icon {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.avatar-logo {
+  background-color: purple;
+}
+
+.logout-handle {
+  font-size: 35px;
+}
+
+.logout-outline {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.col-two-header {
+  display: flex;
+  justify-content: center;
+}
+
+.user-icon {
+  font-size: 23px;
+}
+
+.col-eight-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-two-cart-header {
+  display: flex;
+  justify-content: center;
+}
+
+.empty-image {
+  height: 300px;
+  width: 400px;
+}
+
+.product-image {
+  width: 150px;
+  height: 100px;
+}
+
+.row-home {
+  margin: 20px 0px 0px !important;
+}
+
+.example-image {
+  height: 300px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  height: 71vh;
+  align-items: center;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.table-border {
+  width: 50%;
+}
+
+thead > tr > th {
+  text-align: center !important;
+}
+
+tbody > tr > td {
+  text-align: center !important;
+}
+
+.account-flex {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.account-text {
+  font-size: 20px;
+  padding-left: 8px;
+}
+
+.total-amount {
+  text-align: center;
+  font-size: 30px;
+}
+
+.placeorder-btn {
+  width: 50%;
+}
+
+.placeorder {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-category {
+  padding: 16px 0px 0px 10px;
+}
+
+.dropdown-category .ant-btn:hover {
+  color: black;
+  background-color: azure;
+  border: none;
+}
+
+.footer {
+  background-color: black;
+  padding: 50px 0px 50px;
+  margin-top: 50px;
+}
+
+.text-color {
+  color: white;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.list {
+  list-style-type: none;
+  color: white;
+}
+
+.font-size {
+  font-weight: 800;
+}
+
+.category-font {
+  text-align: center;
+  font-size: 40px;
+  text-transform: capitalize;
+  font-family: revert;
+}
+
+.showing-result {
+  padding-left: 11px;
+  font-weight: 600;
+}
+
+/* media query */
+
+@media only screen and (max-width: 1517.78px) {
+  .selector {
+    right: 19%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .user-icon {
+    font-size: 10px;
+  }
+  .login-text {
+    font-size: 10px;
+  }
+  .amazon-logo {
+    height: 50px;
+    width: 50px;
+  }
+  .cart-logo {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+  .selector {
+    font-size: 10px;
+    top: 0%;
+    right: 22%;
+    width: 24%;
+    height: 43%;
+  }
+  .header {
+    height: 50%;
+  }
+}
+
+@media only screen and (max-width: 2560px) {
+  .selector {
+    left: 56%;
+  }
+  .card-form{
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .selector {
+    left: 59%;
+  }
+  .card-form{
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .selector {
+    left: 65%;
+  }
+  .card-form{
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .user-icon {
+    font-size: 15px;
+  }
+  .login-text {
+    font-size: 15px;
+  }
+  .amazon-logo {
+    height: 80px;
+    width: 80px;
+  }
+  .cart-logo {
+    height: 45px;
+    width: 45px;
+  }
+  .selector {
+    font-size: 13px;
+    top: 0%;
+    width: 28%;
+    height: 40%;
+  }
+  .carpatge-content {
+    width: 350px;
+    display: contents;
+  }
+  .product-col {
+    width: 425px;
+  }
+  .product-image {
+    height: 60px;
+    width: 50px;
+  }
+  .empty-image {
+    height: 150px;
+    width: 200px;
+  }
+  .empty-page {
+    text-align: center;
+    margin-top: 110px;
+    font-size: 13px;
+  }
+  .empty-center {
+    margin-left: 50px;
+  }
+  .card-form{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .selector {
+    width: 16px;
+    height: 16px;
+    left: 33%;
+    top: -4px;
+    font-size: 12px;
+  }
+  .row-home {
+    width: 455px;
+  }
+  .footer {
+    width: 455px;
+  }
+  .header {
+    width: 455px;
+  }
+  .carpatge-content {
+    width: 350px;
+  }
+  .product-col {
+    width: 425px;
+  }
+  .product-image {
+    height: 60px;
+    width: 50px;
+  }
+  .empty-image {
+    height: 150px;
+    width: 200px;
+  }
+  .empty-page {
+    text-align: center;
+    margin-top: 110px;
+    font-size: 13px;
+  }
+  .empty-center {
+    margin-left: 50px;
+  }
+  .cart-logo{
+    margin-right: 20px;
+    height: 30px;
+    width: 30px;
+  }
+  .login-text{
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .card-form{
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .row-home {
+    width: 458px;
+  }
+  .footer {
+    width: 459px;
+  }
+  .header {
+    width: 458px;
+  }
+  .selector {
+    left: 16%;
+    width: 17px;
+  }
+  .carpatge-content {
+    width: 350px;
+  }
+  .product-col {
+    width: 425px;
+  }
+  .product-image {
+    height: 60px;
+    width: 50px;
+  }
+  .empty-image {
+    height: 150px;
+    width: 200px;
+  }
+  .empty-page {
+    text-align: center;
+    margin-top: 110px;
+    font-size: 10px;
+  }
+  .empty-center {
+    margin-left: 130px;
+  }
+  .login-text {
+    font-size: 12px;
+  }
+  .cart-logo {
+    padding-right: 15px;
+  }
+  .amazon-logo {
+    height: 65px;
+    width: 65px;
+  }
+  .card-form{
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .row-home {
+    width: 467px;
+  }
+  .footer {
+    width: 474px;
+  }
+  .header {
+    width: 474px;
+  }
+  .selector {
+    width: 15px;
+    height: 15px;
+  }
+  .carpatge-content {
+    width: 350px;
+  }
+  .product-col {
+    width: 425px;
+  }
+  .product-image {
+    height: 60px;
+    width: 50px;
+  }
+  .empty-image {
+    height: 150px;
+    width: 200px;
+  }
+  .empty-page {
+    text-align: center;
+    margin-top: 110px;
+    font-size: 8px;
+  }
+  .empty-center {
+    margin-left: 130px;
+  }
+  .card-form {
+    width: 100%;
+  }
+  .login-text {
+    font-size: 12px;
+  }
+  .total-quantity-flex {
+    width: 472px;
+  }
+  .proceed-btn {
+    width: 442px;
+  }
+  .cart {
+    font-size: 35px;
+  }
+  .form-card {
+    width: 467px;
+  }
+  .billing-form {
+    width: 400px;
+    margin-left: 36px;
+  }
+  .total-amount {
+    width: 468px;
+  }
+  .username {
+    width: 360px;
+  }
+  .total-amount {
+    font-size: 20px;
+  }
+}
