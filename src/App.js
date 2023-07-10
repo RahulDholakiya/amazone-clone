@@ -22,6 +22,7 @@ function App() {
           <Route path="/loginpage" element={<LoginPage />} />
           <Route path="/placeorder" element={<PlaceOrder />} />
         </Routes>
+        
       </BrowserRouter>
       <Footer />
     </div>
