@@ -9,6 +9,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HeaderCom from "./Component/HeaderCom";
 import Footer from "./Component/Footer";
+import Register from "./Component/Register";
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
           <Route path="/cartpage" element={<CartPage />} />
           <Route path="/loginpage" element={<LoginPage />} />
           <Route path="/placeorder" element={<PlaceOrder />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
-        
       </BrowserRouter>
       <Footer />
     </div>

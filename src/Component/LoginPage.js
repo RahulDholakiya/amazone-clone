@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { loginCart } from "../Reducer/ReducerCom";
 import { setIsLogin } from "../Reducer/ReducerCom";
 import { toast } from "react-toastify";
+import { app } from "../Firebase";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth(app);
 
 const LoginPage = () => {
   const [form] = useForm();
@@ -14,10 +18,18 @@ const LoginPage = () => {
   const dispatch = useDispatch();
 
   const handleLogin = (values) => {
-    console.log(values);
-    dispatch(loginCart(values));
-    dispatch(setIsLogin(true));
-    navigate("/");
+    signInWithEmailAndPassword(auth, values?.email, values?.password)
+      .then((value) => {
+        toast.success("Login Successfully")
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.info("Incorrect Password")
+      });
+      console.log(values);
+      dispatch(loginCart(values));
+      dispatch(setIsLogin(true));
   };
 
   return (
