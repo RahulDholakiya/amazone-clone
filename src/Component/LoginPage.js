@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { loginCart } from "../Reducer/ReducerCom";
 import { setIsLogin } from "../Reducer/ReducerCom";
 import { toast } from "react-toastify";
-import { app } from "../Firebase";
+import { app,logInWithEmailAndPassword } from "../Firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth(app);
@@ -18,7 +18,7 @@ const LoginPage = () => {
   const dispatch = useDispatch();
 
   const handleLogin = (values) => {
-    signInWithEmailAndPassword(auth, values?.email, values?.password)
+    logInWithEmailAndPassword(auth, values?.email, values?.password)
       .then((value) => {
         toast.success("Login Successfully")
         navigate("/");
@@ -84,7 +84,6 @@ const LoginPage = () => {
               type="primary"
               htmlType="submit"
               className="login-btn"
-              onClick={() => toast.success("Login Successfully")}
             >
               Login
             </Button>
