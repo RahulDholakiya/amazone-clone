@@ -3,11 +3,11 @@ import { Button, Form, Input } from "antd";
 import { useForm } from "antd/es/form/Form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { loginCart } from "../Reducer/ReducerCom";
-import { setIsLogin } from "../Reducer/ReducerCom";
+import { loginCart, setIsLogin, setUserId } from "../Reducer/ReducerCom";
 import { toast } from "react-toastify";
-import { app,logInWithEmailAndPassword } from "../Firebase";
+import { app, db } from "../Firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const auth = getAuth(app);
 
@@ -17,19 +17,30 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleLogin = (values) => {
-    logInWithEmailAndPassword(auth, values?.email, values?.password)
-      .then((value) => {
-        toast.success("Login Successfully")
-        navigate("/");
+  const handleLogin = async (values) => {
+    console.log("Login", values);
+    await signInWithEmailAndPassword(auth, values?.email, values?.password)
+      .then((userCredential) => {
+        if (userCredential) {
+          toast.success("Login Successfully");
+          dispatch(setIsLogin(true));
+          navigate("/");
+        }
       })
-      .catch((err) => {
-        console.log(err);
-        toast.info("Incorrect Password")
+      .catch((error) => {
+        toast.error("Invalid Email or Password");
+        form.resetFields();
       });
-      console.log(values);
-      dispatch(loginCart(values));
-      dispatch(setIsLogin(true));
+    dispatch(loginCart(values));
+    const querySnapshot = await collection(db, "user");
+    const que = query(querySnapshot, where("email", "==", values.email));
+    const snapshot = await getDocs(que);
+    snapshot.forEach((doc) => {
+      const user = { ...doc.data(), userid: doc.id };
+      const userid = doc.id;
+      dispatch(loginCart(user));
+      dispatch(setUserId(userid));
+    });
   };
 
   return (
@@ -80,12 +91,17 @@ const LoginPage = () => {
             >
               <Input.Password className="input-password" />
             </Form.Item>
+            <Button type="primary" htmlType="submit" className="login-btn">
+              Login
+            </Button>
+            <p className="new-to-amazon">New to amazon?</p>
             <Button
               type="primary"
               htmlType="submit"
               className="login-btn"
+              onClick={() => navigate("/register")}
             >
-              Login
+              Create Your Amazon Account
             </Button>
           </Form>
           <p>
