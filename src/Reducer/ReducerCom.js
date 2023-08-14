@@ -18,6 +18,7 @@ const reducerSlice = createSlice({
     isLoading: false,
     data: null,
     isError: false,
+    userId: "",
   },
   reducers: {
     addToCart: (state, action) => {
@@ -30,10 +31,13 @@ const reducerSlice = createSlice({
     },
     loginCart: (state, action) => {
       state.logCart = action.payload;
-      console.log(action.payload);
+      console.log("logCart", action.payload);
     },
     setIsLogin: (state, action) => {
       state.isLogin = action.payload;
+    },
+    setUserId: (state, action) => {
+      state.userId = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -51,6 +55,12 @@ const reducerSlice = createSlice({
   },
 });
 
-export const { addToCart, removeToCart, loginCart, setIsLogin } =
-  reducerSlice.actions;
+export const {
+  addToCart,
+  removeToCart,
+  loginCart,
+  setIsLogin,
+  setUserId,
+  setUserDetails,
+} = reducerSlice.actions;
 export default reducerSlice.reducer;

@@ -11,14 +11,11 @@ const Home = () => {
   const [mensProduct, setMensProduct] = useState("");
   const [data, setData] = useState("");
 
-  const productValue = useSelector((state) => state?.addProduct?.data);
-  console.log(productValue);
+  const dispatch = useDispatch();
 
-  const selectorValue = useSelector((state) => state?.addProduct?.logCart);
-  console.log(selectorValue);
+  const productValue = useSelector((state) => state?.addProduct?.data);
 
   const addProductToCart = useSelector((state) => state?.addProduct?.addCart);
-  const dispatch = useDispatch();
 
   const loader = useSelector((state) => state?.addProduct?.isLoading);
 
@@ -30,7 +27,7 @@ const Home = () => {
     dispatch(addToCart(item));
     console.log(addProductToCart);
   };
- 
+
   const items = [
     {
       label: "All",
@@ -56,7 +53,7 @@ const Home = () => {
 
   const onClick = ({ key }) => {
     setData(key);
-    console.log("key",key);
+    console.log("key", key);
     if (key === "All") {
       fetch("https://fakestoreapi.com/products").then((response) => {
         response

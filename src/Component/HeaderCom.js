@@ -16,6 +16,7 @@ const HeaderCom = () => {
   const isLogin = useSelector((state) => state?.addProduct?.isLogin);
 
   const selectorValue = useSelector((state) => state?.addProduct?.logCart);
+  console.log("headerEmail", selectorValue);
 
   const addProductToCart = useSelector((state) => state?.addProduct?.addCart);
 
@@ -44,20 +45,14 @@ const HeaderCom = () => {
                 <img src={account} alt="account" height={40} width={40} />
                 <label className="account-text">My Account</label>
               </div>
-              <div className="logout-icon">
-                <LogoutOutlined
-                  className="logout-handle"
-                  onClick={handleLoginLogout}
-                />
+              <div className="logout-icon" onClick={handleLoginLogout}>
+                <LogoutOutlined className="logout-handle" />
                 <label className="logout-text">Logout</label>
               </div>
             </div>
           ) : (
-            <div>
-              <LoginOutlined
-                className="logout-outline"
-                onClick={() => navigate("/loginpage")}
-              />
+            <div onClick={() => navigate("/loginpage")}>
+              <LoginOutlined className="logout-outline" />
               <label className="logout-text">Login</label>
             </div>
           )}
@@ -96,7 +91,13 @@ const HeaderCom = () => {
           </Col>
           <Col span={6} xxl={6} xl={6} lg={6} md={6} sm={6} xs={6}>
             <p className="login-text">
-              {isLogin ? `Hello,${selectorValue?.email}` : "Please Login"}
+              {isLogin ? (
+                `Hello,${selectorValue?.email}`
+              ) : (
+                <span onClick={() => navigate("/loginpage")}>
+                  Please Login/Register
+                </span>
+              )}
             </p>
           </Col>
           <Col

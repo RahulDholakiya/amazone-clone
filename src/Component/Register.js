@@ -3,8 +3,9 @@ import { useForm } from "antd/es/form/Form";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { app } from "../Firebase";
+import { app, db } from "../Firebase";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
 
 const auth = getAuth(app);
 
@@ -12,15 +13,21 @@ const Register = () => {
   const [form] = useForm();
   const navigate = useNavigate();
 
-  const handleRegister = (values) => {
-    createUserWithEmailAndPassword(auth, values?.email, values?.password)
-      .then((value) => {
-        toast.success("Register Successfully")
+  const handleRegister = async (values) => {
+    console.log("Register", values);
+    await createUserWithEmailAndPassword(auth, values?.email, values?.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User", user.uid);
+        addDoc(collection(db, "user"), {
+          ...values,
+        });
+        toast.success("Register Successfully");
         navigate("/loginpage");
       })
-      .catch((err) => {
-        console.log(err);
-        toast.info("User already Register")
+      .catch((error) => {
+        toast.error("User Already Exist");
+        form.resetFields();
       });
   };
 
@@ -77,7 +84,6 @@ const Register = () => {
                 type="primary"
                 htmlType="submit"
                 className="login-btn"
-                onClick={() => toast.success("Register Successfully")}
               >
                 Register
               </Button>
