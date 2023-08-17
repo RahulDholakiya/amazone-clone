@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import HeaderCom from "./Component/HeaderCom";
 import Footer from "./Component/Footer";
 import Register from "./Component/Register";
+import MyAccount from "./Component/MyAccount";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/loginpage" element={<LoginPage />} />
           <Route path="/placeorder" element={<PlaceOrder />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/myaccount" element={<MyAccount />} />
         </Routes>
       </BrowserRouter>
       <Footer />

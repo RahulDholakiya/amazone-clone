@@ -11,7 +11,7 @@ body {
 }
 
 .row-header {
-  align-items: center ;
+  align-items: center;
 }
 
 .selector {
@@ -264,6 +264,7 @@ tbody > tr > td {
 .account-text {
   font-size: 20px;
   padding-left: 8px;
+  cursor: pointer;
 }
 
 .total-amount {
@@ -324,8 +325,43 @@ tbody > tr > td {
   font-weight: 600;
 }
 
-.new-to-amazon{
+.new-to-amazon {
   text-align: center;
+}
+
+/* my account */
+
+.myaccount {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.userupload-img {
+  text-align: center;
+}
+
+.myaccount-main {
+  display: flex;
+  justify-content: center;
+}
+
+.myaccount-width {
+  width: 400px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  padding-bottom: 40px;
+}
+
+.account-details {
+  border-bottom: 2px solid gray;
+}
+
+.account-col {
+  padding: 15px 15px 5px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: system-ui;
 }
 
 /* media query */
@@ -368,7 +404,7 @@ tbody > tr > td {
   .selector {
     left: 56%;
   }
-  .card-form{
+  .card-form {
     width: 25%;
   }
 }
@@ -377,7 +413,7 @@ tbody > tr > td {
   .selector {
     left: 59%;
   }
-  .card-form{
+  .card-form {
     width: 30%;
   }
 }
@@ -386,7 +422,7 @@ tbody > tr > td {
   .selector {
     left: 65%;
   }
-  .card-form{
+  .card-form {
     width: 40%;
   }
 }
@@ -435,7 +471,7 @@ tbody > tr > td {
   .empty-center {
     margin-left: 50px;
   }
-  .card-form{
+  .card-form {
     width: 50%;
   }
 }
@@ -479,16 +515,16 @@ tbody > tr > td {
   .empty-center {
     margin-left: 50px;
   }
-  .cart-logo{
+  .cart-logo {
     margin-right: 20px;
     height: 30px;
     width: 30px;
   }
-  .login-text{
+  .login-text {
     font-size: 11px;
     font-weight: 600;
   }
-  .card-form{
+  .card-form {
     width: 70%;
   }
 }
@@ -539,7 +575,7 @@ tbody > tr > td {
     height: 65px;
     width: 65px;
   }
-  .card-form{
+  .card-form {
     width: 70%;
   }
 }
