@@ -41,7 +41,10 @@ const HeaderCom = () => {
                 </Avatar>
                 <p className="email-border">{selectorValue?.email}</p>
               </div>
-              <div className="account-flex">
+              <div
+                className="account-flex"
+                onClick={() => navigate("/myaccount")}
+              >
                 <img src={account} alt="account" height={40} width={40} />
                 <label className="account-text">My Account</label>
               </div>
